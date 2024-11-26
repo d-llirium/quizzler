@@ -20,9 +20,9 @@ class ViewController: UIViewController {
     
     // MARK: - properties
     let quiz = [
-        "4 + 2 = 6",
-        "(5 - 3) > 1",
-        "(3 + 8) < 10"
+        ["4 + 2 = 6", "True"],
+        ["(5 - 3) > 1", "True"],
+        ["(3 + 8) < 10", "False"]
     ]
     var questionNumber = 0
     
@@ -35,13 +35,27 @@ class ViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        questionNumber += 1
+        
+        let userAnswer = sender.currentTitle // True || False
+        let actualAnswer = quiz[questionNumber][1] // to get the answer
+        
+        if userAnswer == actualAnswer {
+            print("Right")
+        } else {
+            print("Wrong")
+        }
+        
+        if questionNumber < (quiz.count-1) {
+            questionNumber += 1
+        } else {
+            questionNumber = 0 // loop quiz
+        }
         updateUI()
     }
     
     // MARK: - functions
     private func updateUI() {
-        questionLabel.text = quiz[questionNumber]
+        questionLabel.text = quiz[questionNumber][0] // to get the question
     }
 }
 
