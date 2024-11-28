@@ -50,9 +50,9 @@ class ViewController: UIViewController {
         let actualAnswer = actualQuestion.answer // to get the answer
         
         if userAnswer == actualAnswer {
-            print("Right")
+            sender.backgroundColor = UIColor.green // feedback to the user
         } else {
-            print("Wrong")
+            sender.backgroundColor = UIColor.red // feedback to the user
         }
         
         if questionNumber < (quiz.count-1) {
@@ -60,13 +60,20 @@ class ViewController: UIViewController {
         } else {
             questionNumber = 0 // loop quiz
         }
-        updateUI()
+
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false) // we don't need to put insde a variable if it runs only once, so we don`t need to invalidate it
     }
     
     // MARK: - functions
-    private func updateUI() {
+    @objc private func updateUI() {
         let actualQuestion = quiz[questionNumber]
         questionLabel.text = actualQuestion.text // to get the question
+        
+        // clear the button collors
+        trueButton.backgroundColor = UIColor.clear
+        falseButton.backgroundColor = UIColor.clear
+        
+        progressBar.progress = Float(questionNumber + 1)/Float(quiz.count) // because zero/zero is zero... and the progress needs to start on question one, so it needs to show some progress
     }
 }
 
