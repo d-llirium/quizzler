@@ -25,14 +25,19 @@ struct QuizBrain {
               Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
     ]
     var questionNumber = 0
+    var score = 0
     
-    // MARK: - plain methods
-    func checkAnswer(_ userAnswer: String) -> Bool {
+    // MARK: - methods
+    mutating func checkAnswer(_ userAnswer: String) -> Bool {
         if userAnswer == quiz[questionNumber].answer {
+            score += 1
             return true
         } else {
             return false
         }
+    }
+    mutating func getScore() -> Int {
+        return score
     }
     func getQuestionText() -> String {
         return quiz[questionNumber].text
@@ -40,13 +45,12 @@ struct QuizBrain {
     func getProgress() -> Float {
         return Float(questionNumber + 1)/Float(quiz.count) // because zero/zero is zero... and the progress needs to start on question one, so it needs to show some progress
     }
-    
-    // MARK: -  mutating methods > the struct needs to be a var instance
     mutating func nextQuestion() {
         if questionNumber < (quiz.count-1) {
             questionNumber += 1
         } else {
             questionNumber = 0 // loop quiz
+            score = 0
         }
     }
 }
