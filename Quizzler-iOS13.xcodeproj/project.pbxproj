@@ -15,6 +15,7 @@
 		AD7631B622F9851900C6E71B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD7631B522F9851900C6E71B /* README.md */; };
 		CE80D3ED2CF61CE800A4AE16 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80D3EC2CF61CE800A4AE16 /* Question.swift */; };
 		CE80D3F22CF8C41000A4AE16 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE80D3F12CF8C3FF00A4AE16 /* QuizBrain.swift */; };
+		CE9491162CFA2BFE002C718E /* gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE9491152CFA2BFE002C718E /* gif.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AD7631B522F9851900C6E71B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE80D3EC2CF61CE800A4AE16 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		CE80D3F12CF8C3FF00A4AE16 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		CE9491152CFA2BFE002C718E /* gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -48,6 +50,7 @@
 		AD4BDE3D22D878BA005BA4CC = {
 			isa = PBXGroup;
 			children = (
+				CE9491152CFA2BFE002C718E /* gif.gif */,
 				AD7631B522F9851900C6E71B /* README.md */,
 				AD4BDE4822D878BA005BA4CC /* Quizzler-iOS13 */,
 				AD4BDE4722D878BA005BA4CC /* Products */,
@@ -158,6 +161,7 @@
 				AD4BDE5622D878BC005BA4CC /* LaunchScreen.storyboard in Resources */,
 				AD4BDE5322D878BC005BA4CC /* Assets.xcassets in Resources */,
 				AD7631B622F9851900C6E71B /* README.md in Resources */,
+				CE9491162CFA2BFE002C718E /* gif.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
